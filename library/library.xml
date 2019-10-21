@@ -1,0 +1,7 @@
+ <?xml version="1.0"?>
+ <tryton>
+     <data>
+        <menuitem name="Library" sequence="0" id="menu_library"/>
+        <menuitem name="Books" parent="menu_library" id="menu_books" action="act_library_window"/>
+     </data>
+ </tryton>
