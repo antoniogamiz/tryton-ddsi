@@ -1,0 +1,9 @@
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="party_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_form"/>
+            <field name="model">party_custom_party_form</field>
+        </record>
+    </data>
+</tryton>
