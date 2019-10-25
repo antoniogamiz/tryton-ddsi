@@ -1,3 +1,4 @@
+<!-- tryton-demo/view/party_custom_party_form.xml -->
 <data>
     <xpath expr="/form" position="inside">
         <label name="tumfield"/>
