@@ -5,4 +5,4 @@ from . import party_custom
 __all__ = ['register']
 
 def register():
-    party_custom.register('tryton-demo')
+    party_custom.register('demo')

@@ -1,6 +1,6 @@
 <data>
     <xpath expr="/form" position="inside">
-        <label name="tumfiled"/>
-        <field name="tumfiled"/>
+        <label name="tumfield"/>
+        <field name="tumfield"/>
     </xpath>
 </data>

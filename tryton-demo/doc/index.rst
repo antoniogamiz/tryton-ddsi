@@ -1,2 +1,0 @@
-Tryton-Demo Module
-##################

@@ -37,7 +37,7 @@ version = info.get('version', '0.0.1')
 major_version, minor_version, _ = version.split('.', 2)
 major_version = int(major_version)
 minor_version = int(minor_version)
-name = 'antonio_tryton-demo'
+name = 'antonio_demo'
 
 requires = []
 for dep in info.get('depends', []):
@@ -53,19 +53,19 @@ if minor_version % 2:
 
 setup(name=name,
     version=version,
-    description='demo',
+    description='',
     long_description=read('README.rst'),
-    author='antonio',
-    author_email='antoniogamiz10@gmail.com',
-    url='https://github.com/antoniogamiz/',
+    author='Tryton',
+    author_email='bugs@tryton.org',
+    url='http://www.tryton.org/',
     keywords='',
-    package_dir={'trytond.modules.tryton-demo': '.'},
+    package_dir={'trytond.modules.demo': '.'},
     packages=(
-        ['trytond.modules.tryton-demo'] +
-        ['trytond.modules.tryton-demo.%s' % p for p in find_packages()]
+        ['trytond.modules.demo'] +
+        ['trytond.modules.demo.%s' % p for p in find_packages()]
         ),
     package_data={
-        'trytond.modules.tryton-demo': (info.get('xml', [])
+        'trytond.modules.demo': (info.get('xml', [])
             + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fodt',
                 'icons/*.svg', 'tests/*.rst']),
         },
@@ -109,7 +109,7 @@ setup(name=name,
     zip_safe=False,
     entry_points="""
     [trytond.modules]
-    tryton-demo = trytond.modules.tryton-demo
+    demo = trytond.modules.demo
     """,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',

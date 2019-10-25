@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:10
+    environment: 
+      - POSTGRES_DB=demot
+    volumes:
+      - demo-db:/var/lib/postgresql/data
+    restart: always
+  tryton:
+    image: tryton-ddsi:latest
+    environment:
+      - TRYTOND_EMAIL__FROM=a
+      - TRYTOND_EMAIL__URI=smtpd://smtpd:25
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - demo-data:/var/lib/trytond/db
+    depends_on:
+      - postgres
+    restart: always
+  tryton-con:
+    image: tryton-ddsi
+    command: trytond-cron -d demot
+    volumes:
+      - demo-data:/var/lib/trytond/db
+    depends_on:
+      - postgres
+    restart: always
+  tryton-update:
+    image: tryton-ddsi
+    command: sh -c "trytond-admin -d demot --all --activate-dependencies -v && tail -f /dev/null"
+    volumes:
+      - demo-data:/var/lib/trytond/db
+    depends_on:
+      - postgres
+    restart: "no"
+volumes:
+  demo-data:
+  demo-db:
